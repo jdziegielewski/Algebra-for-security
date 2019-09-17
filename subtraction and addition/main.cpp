@@ -10,7 +10,7 @@ int main()
 	string result1;
 	int radix;
 	int r=0;
-	char sign;
+	char sign='+';
 	int switchcase;
     cout << " Input the radix: ";
 	cin>>radix;
@@ -21,7 +21,8 @@ int main()
 	cout << " Input the 2nd number: ";
 	cin>> number2;
 
-
+                        //case 1 is already done
+                        //case 2
 	if(number1[0]=='-' && number2[0]=='-' && operation=="addition"){ //case 3
         number1.erase(0,1);
         number2.erase(0,1);
@@ -42,10 +43,7 @@ int main()
 	}
     if(number1[0]=='-' && number2[0]!='-' && operation=="addition"){ //case 2b
         number1.erase(0,1);
-        string temp = number1;
-        number1=number2;
-        number2=temp;
-        sign='+';
+        sign='-';
         operation="subtraction";
 	}
 	if(number1[0]!='-' && number2[0]=='-' && operation=="subtraction"){ //case6a
@@ -180,6 +178,24 @@ else k=len;
          break;
 
       case 2 :
+          //check if 1st number is grater than the other
+          //numbers are reversed so we have to start from len-1
+          for(int i=len-1; i>=0; i--){
+            if(num1[i]>num2[i]){
+                break;
+            }
+            else if (num1[i]<num2[i]){//case when we should reverse the numbers
+               std::swap(num1, num2);
+               if(sign=='-'){
+                sign='+';
+                }
+            else if(sign=='+'){
+                sign='-';
+            }
+              break;
+            }
+
+          }
               for(int i=0;i<len;i++){
         result[i]=num1[i]-num2[i]-r;
         if(result[i]<0){

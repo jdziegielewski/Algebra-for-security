@@ -98,6 +98,7 @@ int main()
     for(int i=0;i<len;i++){
         cout<< num1[i];
     }
+    cout<<"\n";
      for(int i=0;i<len;i++){
         cout<< num2[i];
     }

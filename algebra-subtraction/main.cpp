@@ -28,6 +28,7 @@ int main()
         num1[i]=0;
         num2[i]=0;
     }
+    char sign;
 
     for(int i=m-1,j=0; i>=0; i--,j++){
 
@@ -79,6 +80,25 @@ int main()
 
 
     }
+    for(int i=0;i<len;i++){
+        cout<< num1[i];
+    }
+    cout<<"\n";
+     for(int i=0;i<len;i++){
+        cout<< num2[i];
+    }
+    cout<<"\n";
+     for(int i=len-1; i>=0; i--){
+            if(num1[i]>num2[i]){
+                break;
+            }
+            else if (num1[i]<num2[i]){//case when we should reverse the numbers
+           std::swap(num1, num2);
+                sign='-';
+                break;
+            }
+
+          }
 
     for(int i=0;i<len;i++){
         result[i]=num1[i]-num2[i]-r;
@@ -119,7 +139,19 @@ int main()
 
     }
 
-     cout<<"\n";
+     for(int i=0;i<len;i++){
+        cout<< num1[i];
+    }
+    cout<<"\n";
+     for(int i=0;i<len;i++){
+        cout<< num2[i];
+    }
+    cout<<"\n";
+
+        cout<<"\n";
+        if(sign=='-'){
+        cout<<sign<<endl;
+        }
          for(int i=0;i<len;i++){
         cout<< result1[i]; //result reversed result1[i]
     }
