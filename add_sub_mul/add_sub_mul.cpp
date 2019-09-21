@@ -270,6 +270,8 @@ int a=-1;
 
       case 3: {
         int t;
+	int countadd=0;
+        int countmul=0;      
         for (int i=0; i<m+n-1; i++)
         {
             result[i]=0;
@@ -282,8 +284,10 @@ int a=-1;
                 t=result[i+j]+num1[i]*num2[j]+r;
                 r=t/radix;
                 result[i+j]=t-r*radix;
+		countmul++;
             }
             result[i+n]=r;
+	    countadd++;
         }
         if (result[m+n-1]==0)
         {
@@ -316,11 +320,14 @@ int a=-1;
             else
             result1[j] = result[i]+48;
         }
+	cout<<endl;
         if (sign=='-'){
             cout<<sign;}
         for(int i=0;i<=k;i++){
         cout<< result1[i];
         }
+	cout<<endl<<"The number of additions is: "<<countadd<<endl;
+        cout<<"The number of multiplications is: "<<countmul;      
         break;
 
    }
