@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream.h>
 using namespace std;
 
 int main()
@@ -8,7 +7,7 @@ int main()
     string arithmetic;
     int whicharithmetic;
     cout<<"\n";
-    cout << " Input the arithmetic: ";
+    cout << "[arithmetic] : ";
 	cin>>arithmetic;
 
     if(arithmetic=="integer"){
@@ -30,8 +29,8 @@ int main()
 	int switchcase;
 	cout <<"[radix] : ";
 	cin>>radix;
+	cout <<"[operation] : "<<endl;
 	cin>>operation;
-	cout <<'['+ operation +']'<<endl;
 	cout << " [x] : ";
 	cin>> number1;
 	cout << " [y] : ";
@@ -40,51 +39,50 @@ int main()
 	// checking the signs of the number and applying correct operation to each case
 
 
-	if(number1[0]=='-' && number2[0]=='-' && operation=="addition"){ //addition of 2 negative numbers
+	if(number1[0]=='-' && number2[0]=='-' && operation=="add"){ //addition of 2 negative numbers
         number1.erase(0,1);
         number2.erase(0,1);
         cout<<number1[0];
         sign='-';
-        operation="addition";
+        operation="add";
 	}
-	if(number1[0]=='-' && number2[0]=='-' && operation=="subtraction"){ //subtraction of 2 negative numbers
+	if(number1[0]=='-' && number2[0]=='-' && operation=="subtract"){ //subtraction of 2 negative numbers
         number1[0]='0';
         number2[0]='0';
         sign='-';
-        operation="subtraction";
+        operation="subtract";
 	}
-	if(number1[0]!='-' && number2[0]=='-' && operation=="addition"){ //addition of positive x and negative y
+	if(number1[0]!='-' && number2[0]=='-' && operation=="add"){ //addition of positive x and negative y
         number2.erase(0,1);
         sign='+';
-        operation="subtraction";
+        operation="subtract";
 	}
-    if(number1[0]=='-' && number2[0]!='-' && operation=="addition"){ //addition of negative x and positive y
+    if(number1[0]=='-' && number2[0]!='-' && operation=="add"){ //addition of negative x and positive y
         number1.erase(0,1);
         string temp = number1;
         number1=number2;
         number2=temp;
         sign='+';
-        operation="subtraction";
+        operation="subtract";
 	}
-	if(number1[0]!='-' && number2[0]=='-' && operation=="subtraction"){ //subtraction of positive x and negative y
+	if(number1[0]!='-' && number2[0]=='-' && operation=="subtract"){ //subtraction of positive x and negative y
         number2.erase(0,1);
         sign='+';
-        operation="addition";
+        operation="add";
 	}
-	if(number1[0]=='-' && number2[0]!='-' && operation=="subtraction"){ //subtraction of negative x and positive y
+	if(number1[0]=='-' && number2[0]!='-' && operation=="subtract"){ //subtraction of negative x and positive y
         sign='-';
-        operation="addition";
+        operation="add";
 	}
-	if(number1[0]=='-' && number2[0]!='-' && operation=="multiplication"){ //multiplication of negative x and positive y
+	if(number1[0]=='-' && number2[0]!='-' && operation=="multiply"){ //multiplication of negative x and positive y
         number1.erase(0,1);
-        sign='-';	cout << " Input the radix: ";
-	cin>>radix;
+        sign='-';
 	}
-	if(number1[0]!='-' && number2[0]=='-' && operation=="multiplication"){ //multiplication of positive x and negative y
+	if(number1[0]!='-' && number2[0]=='-' && operation=="multiply"){ //multiplication of positive x and negative y
         number2.erase(0,1);
         sign='-';
 	}
-	if(number1[0]=='-' && number2[0]=='-' && operation=="multiplication"){ //multiplication of 2 negative numbers
+	if(number1[0]=='-' && number2[0]=='-' && operation=="multiply"){ //multiplication of 2 negative numbers
         number1.erase(0,1);
         number2.erase(0,1);
         sign='+';
@@ -125,7 +123,7 @@ int main()
                 num1[i]=15;
             }
             else
-            num1[i] = number1[j]-48;
+            num1[i] = number1[j]-48; //need to subtract 48 because in ASCII 0 is actually 48
 
 
     }
@@ -154,13 +152,13 @@ int main()
 
     }
 // needed if's because switch case does not work with strings
-if(operation=="addition"){
+if(operation=="add"){
     switchcase=1;
 }
-else if(operation=="subtraction"){
+else if(operation=="subtract"){
     switchcase=2;
 }
-else if(operation=="multiplication"){
+else if(operation=="multiply"){
     switchcase=3;
 }
  switch(switchcase) {
@@ -474,10 +472,10 @@ else if(operation=="multiplication"){
     //now x,y,m are reversed
     // needed if's because switch case does not work with strings
     int opr;
-    if(operation1=="addition"){
+    if(operation1=="add"){
         opr=1;
     }
-    else if(operation1=="subtraction"){
+    else if(operation1=="subtract"){
         opr=2;
     }
 switch(opr){
