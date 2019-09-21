@@ -23,13 +23,9 @@ int main()
 	cin>> number1;
 	cout << " Input the 2nd number: ";
 	cin>> number2;
-	cout<< " Input the method: ";
-	cin>>method;
 
-	if(method=="mod"){
         cout<<" Input the modulus: ";
         cin>>mods;
-	}
 
 	int m=number1.size();
     int n=number2.size();
