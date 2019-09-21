@@ -32,7 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="add_sub_mul.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
