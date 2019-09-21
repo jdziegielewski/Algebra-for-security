@@ -29,7 +29,7 @@ int main()
 	int switchcase;
 	cout <<"[radix] : ";
 	cin>>radix;
-	cout <<"[operation] : "<<endl;
+	cout <<"[operation] : ";
 	cin>>operation;
 	cout << " [x] : ";
 	cin>> number1;
@@ -634,7 +634,6 @@ else{
             else
             result1[j] = result[i]+48;
 
-multiplication
     }
     // outputting the answer
     int c=-1;
@@ -650,7 +649,7 @@ multiplication
     }
 }
 }
-//step 1.1
+
 
       }//end of modular case
 
