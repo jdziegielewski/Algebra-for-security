@@ -4,8 +4,10 @@ using namespace std;
 
 int main()
 {
+    do{
     string arithmetic;
     int whicharithmetic;
+    cout<<"\n";
     cout << " Input the arithmetic: ";
 	cin>>arithmetic;
 
@@ -15,46 +17,48 @@ int main()
     else if(arithmetic=="modular"){
         whicharithmetic=2;
     }
+    //depending which arithmetic user have chosen the program will wait for 3 or 4 inputs
     switch(whicharithmetic) {
         case 1: {
-            string operation;
-    string number1;
-	string number2;
-	string result1;
-	int radix;
-	int r=0;
-	char sign='+';
+    string operation; //type of operation (addition or subtraction or multiplication or karatsuba
+    string number1; //x variable
+	string number2; //y variable
+	string result1; //result
+	int radix; //radix of numbers
+	int r=0; // carry (remainder)
+	char sign='+'; //sign of a number, made + by default
 	int switchcase;
-    cout << " Input the radix: ";
+	cout <<"[radix] : ";
 	cin>>radix;
-	cout << " Input the operation: ";
 	cin>>operation;
-	cout << " Input the 1st number: ";
+	cout <<'['+ operation +']'<<endl;
+	cout << " [x] : ";
 	cin>> number1;
-	cout << " Input the 2nd number: ";
+	cout << " [y] : ";
 	cin>> number2;
 
-	//checking th
+	// checking the signs of the number and applying correct operation to each case
 
-	if(number1[0]=='-' && number2[0]=='-' && operation=="addition"){ //case 3
+
+	if(number1[0]=='-' && number2[0]=='-' && operation=="addition"){ //addition of 2 negative numbers
         number1.erase(0,1);
         number2.erase(0,1);
         cout<<number1[0];
         sign='-';
         operation="addition";
 	}
-	if(number1[0]=='-' && number2[0]=='-' && operation=="subtraction"){ //case 7
+	if(number1[0]=='-' && number2[0]=='-' && operation=="subtraction"){ //subtraction of 2 negative numbers
         number1[0]='0';
         number2[0]='0';
         sign='-';
         operation="subtraction";
 	}
-	if(number1[0]!='-' && number2[0]=='-' && operation=="addition"){ //case 2a
+	if(number1[0]!='-' && number2[0]=='-' && operation=="addition"){ //addition of positive x and negative y
         number2.erase(0,1);
         sign='+';
         operation="subtraction";
 	}
-    if(number1[0]=='-' && number2[0]!='-' && operation=="addition"){ //case 2b
+    if(number1[0]=='-' && number2[0]!='-' && operation=="addition"){ //addition of negative x and positive y
         number1.erase(0,1);
         string temp = number1;
         number1=number2;
@@ -62,42 +66,43 @@ int main()
         sign='+';
         operation="subtraction";
 	}
-	if(number1[0]!='-' && number2[0]=='-' && operation=="subtraction"){ //case6a
+	if(number1[0]!='-' && number2[0]=='-' && operation=="subtraction"){ //subtraction of positive x and negative y
         number2.erase(0,1);
         sign='+';
         operation="addition";
 	}
-	if(number1[0]=='-' && number2[0]!='-' && operation=="subtraction"){ //case6b
-        number1.erase(0,1);
+	if(number1[0]=='-' && number2[0]!='-' && operation=="subtraction"){ //subtraction of negative x and positive y
         sign='-';
         operation="addition";
 	}
-	if(number1[0]=='-' && number2[0]!='-' && operation=="multiplication"){
+	if(number1[0]=='-' && number2[0]!='-' && operation=="multiplication"){ //multiplication of negative x and positive y
         number1.erase(0,1);
         sign='-';
 	}
-	if(number1[0]!='-' && number2[0]=='-' && operation=="multiplication"){
+	if(number1[0]!='-' && number2[0]=='-' && operation=="multiplication"){ //multiplication of positive x and negative y
         number2.erase(0,1);
         sign='-';
 	}
-	if(number1[0]=='-' && number2[0]=='-' && operation=="multiplication"){
+	if(number1[0]=='-' && number2[0]=='-' && operation=="multiplication"){ //multiplication of 2 negative numbers
         number1.erase(0,1);
         number2.erase(0,1);
         sign='+';
 	}
-
-	int m=number1.size();
-    int n=number2.size();
-    int len=max(m,n);
+	//program works for all other cases : addition of 2 positive numbers, subtraction of positive y from larger positive x,
+    //,subtraction of positive y from smaller positive x, multiplication of 2 positive numbers
+	int m=number1.size(); // x word length
+    int n=number2.size(); // y word length
+    int len=max(m,n); // which is grater
+    // declaring arrays of int to compute the operations
     int* num1 = new int[ len ];
     int* num2 = new int[ len ];
-    int k;
+    int k; // to change the size of array result
     int* result = new int[ len ];
-    for(int i=0;i<len;i++){
+    for(int i=0;i<len;i++){ //first fitting the arrays with 0's so if the numbers are different in word size the operation will be held
         num1[i]=0;
         num2[i]=0;
     }
-
+//reversing the strings to arrays of int for x and y
     for(int i=m-1,j=0; i>=0; i--,j++){
 
             if(number1[j]=='A'){
@@ -147,7 +152,7 @@ int main()
             num2[i] = number2[j]-48;
 
     }
-
+// needed if's because switch case does not work with strings
 if(operation=="addition"){
     switchcase=1;
 }
@@ -158,7 +163,7 @@ else if(operation=="multiplication"){
     switchcase=3;
 }
  switch(switchcase) {
-      case 1 : {
+      case 1 : { //addition algorithm
           for(int i=0;i<len;i++){
         result[i]=num1[i]+num2[i]+r;
         if(result[i]>=radix){
@@ -167,7 +172,7 @@ else if(operation=="multiplication"){
         }
         else r=0;
 }
-      for(int i=len-1,j=0; i>=0; i--,j++){
+      for(int i=len-1,j=0; i>=0; i--,j++){ //reversing the array of int to string
 
             if(result[i]==10){
                 result1[j]='A';
@@ -191,32 +196,49 @@ else if(operation=="multiplication"){
             result1[j] = result[i]+48;
 
 
-    }
-        cout<<"\n";
+    } // outputting the answer
+        cout<<"[answer] : ";
         if(sign=='-'){
         cout<<sign;}
         if(r==1){
             cout<<r;
         }
          for(int i=0;i<len;i++){
-        cout<< result1[i]; //result reversed result1[i]
+        cout<< result1[i];
     }
+
          break;
       }
-      case 2 : {
-               for(int i=len-1; i>=0; i--){
-            if(num1[i]>num2[i]){
-                break;
-            }
-            else if (num1[i]<num2[i]){//case when we should reverse the numbers
-           std::swap(num1, num2);
-                sign='-';
+      case 2 : { // subtraction
+          //checking which number is larger and applying correct cases
+        if(sign=='+'){ //case when 2 numbers are positive
+            for(int i=len-1; i>=0; i--){
+                if(num1[i]>num2[i]){
+                    break;
+                }
+                else if (num1[i]<num2[i]){//case when we should reverse the numbers
+                    std::swap(num1, num2);
+                sign='+';
                 break;
             }
 
           }
+          }
+          else { //case when 2 numbers are negative
+                        for(int i=len-1; i>=0; i--){
+                if(num1[i]>num2[i]){
+                        sign='-';
+                    break;
+                }
+                else if (num1[i]<num2[i]){//case when we should reverse the numbers
+                    std::swap(num1, num2);
+                sign='+';
+                break;
+            }
 
-              for(int i=0;i<len;i++){
+          }
+          }
+              for(int i=0;i<len;i++){ // algorithm for subtraction
         result[i]=num1[i]-num2[i]-r;
         if(result[i]<0){
             result[i]=result[i]+radix;
@@ -226,7 +248,7 @@ else if(operation=="multiplication"){
     }
 
 
-    for(int i=len-1,j=0; i>=0; i--,j++){
+    for(int i=len-1,j=0; i>=0; i--,j++){ //reversing the array of int to string
 
             if(result[i]==10){
                 result1[j]='A';
@@ -251,11 +273,11 @@ else if(operation=="multiplication"){
 
 
     }
-
-     cout<<"\n";
+            // outputting the answer
+     cout<<"[answer] : ";
      if(sign=='-'){
         cout<<sign;}
-int a=-1;
+    int a=-1;
     for(int i=0;i<len;i++){
         if(result1[i]=='0'){
             a++;
@@ -268,15 +290,15 @@ int a=-1;
     }
 
 
-      case 3: {
+      case 3: { //multiplication
         int t;
 	int countadd=0;
-        int countmul=0;      
+        int countmul=0;
         for (int i=0; i<m+n-1; i++)
         {
             result[i]=0;
         }
-        for (int i=0; i<m; i++)
+        for (int i=0; i<m; i++) //multiplication algorithm
         {
             r=0;
             for (int j=0; j<n; j++)
@@ -297,7 +319,7 @@ int a=-1;
         {
             k=m+n-1;
         }
-        for(int i=k,j=0; i>=0; i--,j++){
+        for(int i=k,j=0; i>=0; i--,j++){ //reversing the array of int to string
 
             if(result[i]==10){
                 result1[j]='A';
@@ -320,37 +342,40 @@ int a=-1;
             else
             result1[j] = result[i]+48;
         }
-	cout<<endl;
+        //// outputting the answer
+        cout<<"[answer] : ";
         if (sign=='-'){
             cout<<sign;}
         for(int i=0;i<=k;i++){
         cout<< result1[i];
         }
-	cout<<endl<<"The number of additions is: "<<countadd<<endl;
-        cout<<"The number of multiplications is: "<<countmul;      
+
+	cout<<endl<<"The number of additions is: "<<countadd<<endl; //number of additions in multiplication algorithm
+        cout<<"The number of multiplications is: "<<countmul; //number of multiplications in multiplication algorithm
         break;
 
    }
 }
-
+    break;
     }
+
+    //modular arithmetics
+
       case 2: {
       string m;//modulus
-  string x;//x
-  string y;//y
-  string result1;//result
-  int radix;
-  cout << "\n\n Modular addition:\n";
-	cout << "-----------------------------------\n";
+    string x;//x
+    string y;//y
+    string result1;//result
+    int radix;
+    cout << " Input the radix: ";
+	cin>>radix;
 	cout << " Input the 1st number: ";
 	cin>> x;
 	cout << " Input the 2nd number: ";
 	cin>> y;
 	cout << " Input the modulo: ";
 	cin>> m;
-	cout << " Input the radix: ";
-	cin>>radix;
-  int r;arithmetic
+    int r;
     int p=m.size();
     int k=x.size();
     int n=y.size();
@@ -462,7 +487,8 @@ bool smaller;
                 smaller=true;
                 break;
             }
-            else if (modulo[i]<zprime[i]){//case when we should reverse the numbers
+            else if (modulo[i]<zprime[i]){//case when we integer
+
                 smaller=false;
                 break;
             }
@@ -512,15 +538,18 @@ else if(smaller==false){
 
     }
     int c=-1;
+    cout<<"[answer] : ";
     for(int i=0;i<len+1;i++){
 
-            if(result[i]==0){
+            if(result1[i]=='0'){
                     c++;
             }
             if(c!=i){
         cout<< result1[i]; //result reversed result1[i]
     }
     }
+
+    break;
       }
 
     }
@@ -528,5 +557,5 @@ else if(smaller==false){
 
 
 
-
+    }while(cin.get() == '\n');
 }
