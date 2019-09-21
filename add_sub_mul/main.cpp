@@ -10,7 +10,7 @@ int main()
 	string result1;
 	int radix;
 	int r=0;
-	char sign;
+	char sign='+';
 	int switchcase;
     cout << " Input the radix: ";
 	cin>>radix;
@@ -153,12 +153,6 @@ else if(operation=="multiplication"){
         }
         else r=0;
 }
-/*if(r==1){
-    k=len+1;
-    result[k-1]=1;
-}
-else k=len;
-    */
       for(int i=len-1,j=0; i>=0; i--,j++){
 
             if(result[i]==10){
@@ -196,6 +190,18 @@ else k=len;
          break;
 
       case 2 :
+               for(int i=len-1; i>=0; i--){
+            if(num1[i]>num2[i]){
+                break;
+            }
+            else if (num1[i]<num2[i]){//case when we should reverse the numbers
+           std::swap(num1, num2);
+                sign='-';
+                break;
+            }
+
+          }
+
               for(int i=0;i<len;i++){
         result[i]=num1[i]-num2[i]-r;
         if(result[i]<0){
