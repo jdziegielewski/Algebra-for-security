@@ -104,22 +104,22 @@ int main()
 //reversing the strings to arrays of int for x and y
     for(int i=m-1,j=0; i>=0; i--,j++){
 
-            if(number1[j]=='A'){
+            if(number1[j]=='A' || number1[j]=='a'){
                 num1[i]=10;
             }
-            else if(number1[j]=='B'){
+            else if(number1[j]=='B' || number1[j]=='b'){
                 num1[i]=11;
             }
-            else if(number1[j]=='C'){
+            else if(number1[j]=='C' || number1[j]=='c'){
                 num1[i]=12;
             }
-            else if(number1[j]=='D'){
+            else if(number1[j]=='D' || number1[j]=='d'){
                 num1[i]=13;
             }
-            else if(number1[j]=='E'){
+            else if(number1[j]=='E' || number1[j]=='e'){
                 num1[i]=14;
             }
-            else if(number1[j]=='F'){
+            else if(number1[j]=='F' || number1[j]=='f'){
                 num1[i]=15;
             }
             else
@@ -129,22 +129,22 @@ int main()
     }
      for(int i=n-1,j=0; i>=0; i--,j++){
 
-            if(number2[j]=='A'){
+            if(number2[j]=='A' || number2[j]=='a'){
                 num2[i]=10;
             }
-            else if(number2[j]=='B'){
+            else if(number2[j]=='B' || number2[j]=='b'){
                 num2[i]=11;
             }
-            else if(number2[j]=='C'){
+            else if(number2[j]=='C' || number2[j]=='c'){
                 num2[i]=12;
             }
-            else if(number2[j]=='D'){
+            else if(number2[j]=='D' || number2[j]=='d'){
                 num2[i]=13;
             }
-            else if(number2[j]=='E'){
+            else if(number2[j]=='E' || number2[j]=='e'){
                 num2[i]=14;
             }
-            else if(number2[j]=='F'){
+            else if(number2[j]=='F' || number2[j]=='f'){
                 num2[i]=15;
             }
             else
@@ -398,22 +398,22 @@ else if(operation=="multiply"){
 //reversing the strings to arrays of int for x and y and m
     for(int i=k-1,j=0; i>=0; i--,j++){
 
-            if(x[j]=='A'){
+            if(x[j]=='A' || x[j]=='a'){
                 num1[i]=10;
             }
-            else if(x[j]=='B'){
+            else if(x[j]=='B' || x[j]=='b'){
                 num1[i]=11;
             }
-            else if(x[j]=='C') {
+            else if(x[j]=='C' || x[j]=='c') {
                 num1[i]=12;
             }
-            else if(x[j]=='D'){
+            else if(x[j]=='D' || x[j]=='d'){
                 num1[i]=13;
             }
-            else if(x[j]=='E'){
+            else if(x[j]=='E' || x[j]=='e'){
                 num1[i]=14;
             }
-            else if(x[j]=='F'){
+            else if(x[j]=='F' || x[j]=='f'){
                 num1[i]=15;
             }
             else
@@ -423,22 +423,22 @@ else if(operation=="multiply"){
     }
      for(int i=n-1,j=0; i>=0; i--,j++){
 
-            if(y[j]=='A'){
+            if(y[j]=='A' || y[j]=='a'){
                 num2[i]=10;
             }
-            else if(y[j]=='B'){
+            else if(y[j]=='B' || y[j]=='b'){
                 num2[i]=11;
             }
-            else if(y[j]=='C'){
+            else if(y[j]=='C' || y[j]=='c'){
                 num2[i]=12;
             }
-            else if(y[j]=='D'){
+            else if(y[j]=='D' || y[j]=='d'){
                 num2[i]=13;
             }
-            else if(y[j]=='E'){
+            else if(y[j]=='E' || y[j]=='e'){
                 num2[i]=14;
             }
-            else if(y[j]=='F'){
+            else if(y[j]=='F' || y[j]=='f'){
                 num2[i]=15;
             }
             else
@@ -447,22 +447,22 @@ else if(operation=="multiply"){
     }
          for(int i=p-1,j=0; i>=0; i--,j++){
 
-            if(m[j]=='A'){
+            if(m[j]=='A' || m[j]=='a'){
                 modulo[i]=10;
             }
-            else if(m[j]=='B'){
+            else if(m[j]=='B' || m[j]=='b'){
                 modulo[i]=11;
             }
-            else if(m[j]=='C'){
+            else if(m[j]=='C' || m[j]=='c'){
                 modulo[i]=12;
             }
-            else if(m[j]=='D'){
+            else if(m[j]=='D' || m[j]=='d'){
                 modulo[i]=13;
             }
-            else if(m[j]=='E'){
+            else if(m[j]=='E' || m[j]=='e'){
                 modulo[i]=14;
             }
-            else if(m[j]=='F'){
+            else if(m[j]=='F' || m[j]=='f'){
                 modulo[i]=15;
             }
             else
