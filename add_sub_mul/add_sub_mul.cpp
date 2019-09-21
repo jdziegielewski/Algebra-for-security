@@ -367,15 +367,15 @@ else if(operation=="multiply"){
     string y;//y
     string result1;//result
     int radix;
-    cout << " Input the radix: ";
+    cout << "[radix] : ";
 	cin>>radix;
-	cout<<"Operation :";
+	cout<<"[operation] : ";
 	cin>>operation1;
-	cout << " Input the 1st number: ";
+	cout << " [x] : ";
 	cin>> x;
-	cout << " Input the 2nd number: ";
+	cout << " [y] : ";
 	cin>> y;
-	cout << " Input the modulo: ";
+	cout << " [m] : ";
 	cin>> m;
     int r; //carry (remainder)
     char sign='+';
@@ -634,7 +634,7 @@ else{
             else
             result1[j] = result[i]+48;
 
-
+multiplication
     }
     // outputting the answer
     int c=-1;
