@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0468cfb9-6b2a-405d-a847-175f79be3a88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/euclidalgo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/convertpolynomial.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/convertpolynomial.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/displaypolynomial.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/input1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/input1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/longdivision.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/polynomialaddition.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/polynomialaddition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/polynomialsubtraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/polynomialsubtraction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/longdivision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/longdivision.java" afterDir="false" />
-    </list>
+    <list default="true" id="0468cfb9-6b2a-405d-a847-175f79be3a88" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -168,16 +159,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570819006652</updated>
-      <workItem from="1570819016321" duration="2010000" />
+      <workItem from="1570819016321" duration="2651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2010000" />
+    <option name="totallyTimeSpent" value="2651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
