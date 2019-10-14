@@ -1,19 +1,22 @@
 public class euclidalgo {
     public int[] euclidAlgo(int[] a, int[] b) {
         int size = Math.max(a.length, b.length);
-        int x = 1;
         int[] X = new int[size];
+        X[0] = 1;
         int[] Xp = new int[size];
 
-        int v = 1;
-        int[] V = new int[size];
 
-        int y = 0;
+        int[] V = new int[size];
+        V[0] = 1;
+
+
         int[] Y = new int[size];
+        Y[0] = 0;
         int[] Yp = new int[size];
 
-        int u = 0;
+
         int[] U = new int[size];
+        U[0] = 0;
 
         int[] Q = new int[size];
         int[] Qp = new int[size];
@@ -77,13 +80,6 @@ public class euclidalgo {
         int size1 = f.length;
         int size2 = g.length;
         int size = Math.max(size1, size2);
-        int[] f = new int[size];
-        int[] g = new int[size];
-
-        for (int i = 0; i < size; i++) {
-            f[i] = 0;
-            g[i] = 0;
-        }
 
 
         int[] r = f;
@@ -217,13 +213,6 @@ public class euclidalgo {
         int size1 = f.length;
         int size2 = g.length;
         int size = Math.max(size1, size2);
-        int[] f = new int[size];
-        int[] g = new int[size];
-
-        for (int i = 0; i < size; i++) {
-            f[i] = 0;
-            g[i] = 0;
-        }
 
 
         int[] r = f;
@@ -353,7 +342,7 @@ public class euclidalgo {
         return q;
     }
 
-    public static int[] polymultiplication(int[] a, int[] b) {
+    public int[] polymultiplication(int[] a, int[] b) {
         int m = a.length;
         int n = b.length;
         int[] prod = new int[m + n - 1];
@@ -373,7 +362,12 @@ public class euclidalgo {
             }
         }
 
-        return prod;
+        int[] copy = new int[m+n-1];
+        for (int i = 0; i < m + n -1; i++) {
+            copy[i] = prod[m+n-2-i];
+        }
+
+        return copy;
     }
 
 

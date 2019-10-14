@@ -38,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/euclidalgo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-124">
-              <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+            <state relative-caret-position="437">
+              <caret line="344" column="54" selection-start-line="344" selection-start-column="54" selection-end-line="344" selection-end-column="54" />
               <folding>
                 <element signature="method#polysubtraction#0;class#euclidalgo#0" />
                 <element signature="method#longdivquo#0;class#euclidalgo#0" />
@@ -149,16 +149,17 @@
       <workItem from="1570819016321" duration="3249000" />
       <workItem from="1570989143285" duration="2313000" />
       <workItem from="1571003286272" duration="163000" />
+      <workItem from="1571056057440" duration="37000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5725000" />
+    <option name="totallyTimeSpent" value="5762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25973153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -270,8 +271,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/euclidalgo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-124">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        <state relative-caret-position="437">
+          <caret line="344" column="54" selection-start-line="344" selection-start-column="54" selection-end-line="344" selection-end-column="54" />
           <folding>
             <element signature="method#polysubtraction#0;class#euclidalgo#0" />
             <element signature="method#longdivquo#0;class#euclidalgo#0" />
