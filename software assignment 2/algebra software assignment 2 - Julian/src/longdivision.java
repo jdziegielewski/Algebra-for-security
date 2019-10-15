@@ -15,6 +15,6 @@ public class longdivision {
 			int i=0;
 			q[i]=q[i]+r[0]/b[0];
 		}
-		
+		r
 	}
 }
