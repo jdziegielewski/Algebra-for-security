@@ -1,5 +1,5 @@
 public class euclidalgo {
-    public int[] euclidAlgo(int[] a, int[] b) {
+    public int[] euclidAlgo(int[] a, int[] b, int mod) {
         int size = Math.max(a.length, b.length);
         int[] X = new int[size];
         X[0] = 1;
@@ -22,27 +22,26 @@ public class euclidalgo {
         int[] Qp = new int[size];
         int[] R = new int[size];
 
-        int[] QU = new int[10];
+        int[] QU = new int[size];
         int[] QV = new int[size];
 
 
         while (b[0] != 0) {
-            Q = longdivquo(a, b, 10);
-            R = longdivrem(a, b, 10);
+            Q = longdivquo(a, b, mod);
+            R = longdivrem(a, b, mod);
             a = b;
             b = R;
             Xp = X;
             Yp = Y;
             X = U;
             Y = V;
-            QU = polymultiplication(Q, U);
-            QV = polymultiplication(Q, V);
-            U = polysubtraction(Xp, QU, 10 );
-            V = polysubtraction(Yp, QV, 10);
+            QU = polymultiplication(Q, U, mod);
+            QV = polymultiplication(Q, V, mod);
+            U = polysubtraction(Xp, QU, mod);
+            V = polysubtraction(Yp, QV, mod);
 
         }
         return X;
-
     }
 
 
@@ -77,11 +76,25 @@ public class euclidalgo {
         return result;
     }
 
-    public int[] longdivquo(int[] f, int[] g, int mod) {
-        int size1 = f.length;
-        int size2 = g.length;
+    public int[] longdivquo(int[] fpre, int[] gpre, int mod) {
+        int size1 = fpre.length;
+        int size2 = gpre.length;
         int size = Math.max(size1, size2);
+        int[] f = new int[size];
+        int[] g = new int[size];
 
+        for (int i = 0; i<size; i++){
+            f[i] = 0;
+            g[i] = 0;
+        }
+
+        for (int i = size - size1, j = 0; j < size1; j++, i++) {
+            f[i] = fpre[j];
+        }
+
+        for (int i = size - size2, j = 0; j < size2; j++, i++) {
+            g[i] = gpre[j];
+        }
 
         int[] r = f;
         int[] q = new int[Math.abs(size1 - size2) + 1];
@@ -210,11 +223,25 @@ public class euclidalgo {
         return q;
     }
 
-    public int[] longdivrem(int[] f, int[] g, int mod) {
-        int size1 = f.length;
-        int size2 = g.length;
+    public int[] longdivrem(int[] fpre, int[] gpre, int mod) {
+        int size1 = fpre.length;
+        int size2 = gpre.length;
         int size = Math.max(size1, size2);
+        int[] f = new int[size];
+        int[] g = new int[size];
 
+        for (int i = 0; i<size; i++){
+            f[i] = 0;
+            g[i] = 0;
+        }
+
+        for (int i = size - size1, j = 0; j < size1; j++, i++) {
+            f[i] = fpre[j];
+        }
+
+        for (int i = size - size2, j = 0; j < size2; j++, i++) {
+            g[i] = gpre[j];
+        }
 
         int[] r = f;
         int[] q = new int[Math.abs(size1 - size2) + 1];
@@ -340,10 +367,10 @@ public class euclidalgo {
                 }
             }
         }
-        return q;
+        return r;
     }
 
-    public int[] polymultiplication(int[] a, int[] b) {
+    public int[] polymultiplication(int[] a, int[] b, int mod) {
         int m = a.length;
         int n = b.length;
         int[] prod = new int[m + n - 1];
@@ -363,6 +390,10 @@ public class euclidalgo {
             }
         }
 
+        for (int i = 0; i < m + n -1; i++) {
+            prod[i]=prod[i]%mod;
+        }
+
         int[] copy = new int[m+n-1];
         for (int i = 0; i < m + n -1; i++) {
             copy[i] = prod[m+n-2-i];
@@ -372,16 +403,16 @@ public class euclidalgo {
     }
 
 
-    public int finddegree(int[] a) {
-        int degA = a.length;
-
-        for (int i = a.length - 1; i >= 0; i--) {
-            if (a[i] == 0) {
-                degA = degA - 1;
-            }
-        }
-        return degA - 1;
-    }
+//    public int finddegree(int[] a) {
+//        int degA = a.length;
+//
+//        for (int i = a.length - 1; i >= 0; i--) {
+//            if (a[i] == 0) {
+//                degA = degA - 1;
+//            }
+//        }
+//        return degA - 1;
+//    }
 
 
 }
