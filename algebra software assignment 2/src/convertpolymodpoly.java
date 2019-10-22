@@ -1,0 +1,34 @@
+public class convertpolymodpoly {
+    public int[] polymodconversion(String f, int mod){
+        if(f == "{}"){
+            int[] polyred = new int[2];
+            polyred[0] = 0;
+            polyred[1] = 0;
+            return polyred;
+        }
+        else{
+            String testpoly = f.substring(1,f.length()-1);
+            if(testpoly.length()==0) {
+                int [] zero = new int[1];
+                zero[0]=0;
+                return zero;
+            }
+            else {
+                String[] stringpoly = testpoly.split(",");
+                int [] poly = new int[stringpoly.length];
+                for(int i=0; i<poly.length;i++) {
+                    poly[i]=Integer.parseInt(stringpoly[i]);
+                }
+
+                //modular reduction
+                int[] polyred = new int[stringpoly.length];
+                for (int i = 0; i < poly.length; i++) {
+                    double q1 = Math.floor(poly[i] / (double) mod);
+                    int q = (int) q1;
+                    polyred[i] = poly[i] - q * mod;
+                }
+                return polyred;
+            }
+        }
+    }
+}
