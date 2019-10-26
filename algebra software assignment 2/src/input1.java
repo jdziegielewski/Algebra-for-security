@@ -27,14 +27,8 @@ public class input1 {
 	polynomialsubtraction subpolyObject = new polynomialsubtraction();
 	longdivision longdivisObject = new longdivision();
 	polyequalspoly polyeqpolyObject = new polyequalspoly();
-<<<<<<< HEAD
-	polynomialmultiplication polymultiObject = new polynomialmultiplication();
+	polynomialmultiplication multiObject = new polynomialmultiplication(); 
 	
-=======
-
-
-
->>>>>>> e243c97e98870b523366769403cb30ec373ccc43
 	File file = new File("example.txt");
 	Scanner scan = new Scanner(file);
 	String line;
