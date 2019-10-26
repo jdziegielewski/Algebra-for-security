@@ -212,8 +212,13 @@
       <workItem from="1572101624061" duration="1121000" />
 =======
       <updated>1572098445712</updated>
+<<<<<<< HEAD
+      <workItem from="1572098452102" duration="5497000" />
+      <workItem from="1572104015138" duration="18000" />
+=======
       <workItem from="1572098452102" duration="2765000" />
 >>>>>>> e243c97e98870b523366769403cb30ec373ccc43
+>>>>>>> 19a9902a8ddd717b44880c024e1fa0c45c3eb118
     </task>
     <servers />
   </component>
@@ -265,6 +270,11 @@
           <value>
 <<<<<<< HEAD
             <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+=======
+<<<<<<< HEAD
+            <State>
               <option name="RECENTLY_FILTERED_USER_GROUPS">
                 <collection />
               </option>
@@ -276,6 +286,7 @@
 =======
             <State />
 >>>>>>> e243c97e98870b523366769403cb30ec373ccc43
+>>>>>>> 19a9902a8ddd717b44880c024e1fa0c45c3eb118
           </value>
         </entry>
       </map>
