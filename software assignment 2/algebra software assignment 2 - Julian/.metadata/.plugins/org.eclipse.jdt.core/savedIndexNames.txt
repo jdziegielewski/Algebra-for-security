@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+C:\Users\20181064\Documents\GitHub\Algebra-for-security\software assignment 2\algebra software assignment 2 - Julian\.metadata\.plugins\org.eclipse.jdt.core
-1931380694.index
-3423253026.index
