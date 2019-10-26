@@ -1,5 +1,5 @@
 public class euclidalgo {
-    public int[] euclidAlgo(int[] a, int[] b) {
+    public int[][] euclidAlgo(int[] a, int[] b, int mod) {
         int size = Math.max(a.length, b.length);
         int[] X = new int[size];
         X[0] = 1;
@@ -27,21 +27,21 @@ public class euclidalgo {
 
 
         while (b[0] != 0) {
-            Q = longdivquo(a, b, 10);
-            R = longdivrem(a, b, 10);
+            Q = longdivquo(a, b, mod);
+            R = longdivrem(a, b, mod);
             a = b;
             b = R;
             Xp = X;
             Yp = Y;
             X = U;
             Y = V;
-            QU = polymultiplication(Q, U);
-            QV = polymultiplication(Q, V);
+            QU = polymultiplication(Q, U, mod);
+            QV = polymultiplication(Q, V, mod);
             U = polysubtraction(Xp, QU, 10 );
             V = polysubtraction(Yp, QV, 10);
-
         }
-        return X;
+
+        return result;
     }
 
 
@@ -342,7 +342,7 @@ public class euclidalgo {
         return q;
     }
 
-    public int[] polymultiplication(int[] a, int[] b) {
+    public int[] polymultiplication(int[] a, int[] b, int mod) {
         int m = a.length;
         int n = b.length;
         int[] prod = new int[m + n - 1];
@@ -360,6 +360,10 @@ public class euclidalgo {
             for (int j = 0; j < n; j++) {
                 prod[i + j] += a[i] * b[j];
             }
+        }
+
+        for (int i = 0; i < m + n -1; i++) {
+            prod[i]=prod[i]%mod;
         }
 
         int[] copy = new int[m+n-1];

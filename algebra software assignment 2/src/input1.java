@@ -27,9 +27,14 @@ public class input1 {
 	polynomialsubtraction subpolyObject = new polynomialsubtraction();
 	longdivision longdivisObject = new longdivision();
 	polyequalspoly polyeqpolyObject = new polyequalspoly();
+<<<<<<< HEAD
+	polynomialmultiplication polymultiObject = new polynomialmultiplication();
+	
+=======
 
 
 
+>>>>>>> e243c97e98870b523366769403cb30ec373ccc43
 	File file = new File("example.txt");
 	Scanner scan = new Scanner(file);
 	String line;
@@ -152,7 +157,7 @@ public class input1 {
 		  displayObject.displaypoly(subpolyObject.polysubtraction(convertpolyObject.polyconversion(f,mod),convertpolyObject.polyconversion(g,mod),mod));
 		break;
 	  case 4://[multiply-poly]
-		//function should be here
+		displayObject.displaypoly(polymultiObject.polymultiplication(convertpolyObject.polyconversion(f,mod),convertpolyObject.polyconversion(g,mod),mod));
 		break;
 	  case 5://[long-div-poly]
 		  displaylongdivObject.displaypolyld(longdivisObject.longdiv(convertpolyObject.polyconversion(f,mod),convertpolyObject.polyconversion(g,mod),mod));
